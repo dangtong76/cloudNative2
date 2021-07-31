@@ -1,0 +1,37 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-service
+spec:
+  rules:
+    - host: www.acorn.com
+      http:
+        paths:
+          - path: /api/getmem
+            pathType: Prefix
+            backend:
+              service:
+                name: getmem-srv
+                port:
+                  number: 3001
+          - path: /api/nodecheck
+            pathType: Prefix
+            backend:
+              service:
+                name: nodecheck-srv
+                port: 
+                  number: 3002
+          - path: /api/sayservice
+            pathType: Prefix
+            backend:
+              service: 
+                name: sayservice-srv
+                port:
+                  number: 3003
+          - path: /*
+            pathType: Prefix
+            backend:
+              service: 
+                name: frontend-srv
+                port: 
+                  number: 3000
