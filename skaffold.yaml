@@ -10,7 +10,7 @@ build:
   # local:
   #   push: false
   googleCloudBuild:
-    projectId: kubernetes-315817
+    projectId: kubernetes-322015
   artifacts:
     - image: dangtong76/getmem
       context: getmem
@@ -28,7 +28,7 @@ build:
       context: frontend
       docker:
         dockerfile: Dockerfile
-# 소스 싱크 관련 설정
+      # 소스 싱크 관련 설정
       sync:
         manual:
           - src: 'src/**/*.ts'
