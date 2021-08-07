@@ -1,4 +1,4 @@
-apiVersion: skaffold/v2alpha3
+apiVersion: skaffold/v2beta10
 kind: Config
 # 쿠버네티스 배포 설정
 deploy:
