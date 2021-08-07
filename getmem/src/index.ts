@@ -14,5 +14,5 @@ app.all('*', async (req, res) => {
 });
 
 app.listen(3001, () => {
-  console.log('getcpu app started. listen on 3001 port.');
+  console.log('getcpu app started. listen on 3001 port.!!');
 })
