@@ -5,12 +5,13 @@ deploy:
   kubectl:
     manifests:
       - ./xinfra/kubernetes/*
+    defaultNamespace: devel
 # 도커 이미지 빌드 관련 설정
 build:
-  # local:
-  #   push: false
-  googleCloudBuild:
-    projectId: kubernetes-322015
+  local:
+    push: true
+  # googleCloudBuild:
+  #   projectId: kubernetes-315817
   artifacts:
     - image: dangtong76/getmem
       context: getmem
