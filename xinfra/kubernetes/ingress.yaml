@@ -8,30 +8,30 @@ spec:
       http:
         paths:
           - path: /api/getmem
-            pathType: Prefix
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: getmem-srv
                 port:
                   number: 3001
           - path: /api/nodecheck
-            pathType: Prefix
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: nodecheck-srv
-                port: 
+                port:
                   number: 3002
           - path: /api/sayservice
-            pathType: Prefix
+            pathType: ImplementationSpecific
             backend:
-              service: 
+              service:
                 name: sayservice-srv
                 port:
                   number: 3003
           - path: /*
-            pathType: Prefix
+            pathType: ImplementationSpecific
             backend:
-              service: 
+              service:
                 name: frontend-srv
-                port: 
+                port:
                   number: 3000
