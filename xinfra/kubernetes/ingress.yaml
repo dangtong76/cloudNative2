@@ -4,7 +4,7 @@ metadata:
   name: ingress-service
 spec:
   rules:
-    - host: www.acorn.com
+    - host: www.acorn2.com
       http:
         paths:
           - path: /api/getmem
