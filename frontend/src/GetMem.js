@@ -1,20 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
-
 
 export function GetMem ()  {
   const [memInfo, setMemInfo] = useState([]);
 
   const getmemUrl = process.env.REACT_APP_GETMEM_URL || 'http://localhost:3001/api/getmem';
   
-  const fetchMemInfo = async () => {
+  const fetchMemInfo = useCallback(async () => {
     const res = await axios.get(getmemUrl);
     setMemInfo(res.data);
-  };
+  },[getmemUrl]);
 
   useEffect(() => {
     fetchMemInfo();
-  }, []);
+  }, [fetchMemInfo]);
 
   const renderedMemInfo = Object.values(memInfo).map((mem,i) => {
     console.log(mem);

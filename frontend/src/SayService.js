@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
 
@@ -7,14 +7,14 @@ export function SayService ()  {
 
   const sayserviceUrl = process.env.REACT_APP_SAYSERVICE_URL || 'http://localhost:3003/api/sayservice';
 
-  const fetchSayInfo = async () => {
+  const fetchSayInfo = useCallback(async () => {
     const res = await axios.get(sayserviceUrl);
     setSayInfo(res.data);
-  };
+  },[sayserviceUrl]);
 
   useEffect(() => {
     fetchSayInfo();
-  }, []);
+  }, [fetchSayInfo]);
   
   const renderedSayInfo = Object.values(sayInfo).map((say,i) => {
     console.log(say);

@@ -21,6 +21,7 @@ kind: Service
 metadata:
   name:  nodecheck-srv
 spec:
+  type: LoadBalancer
   selector:
     app: nodecheck
   ports:

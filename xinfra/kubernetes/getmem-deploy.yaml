@@ -21,6 +21,7 @@ kind: Service
 metadata:
   name:  getmem-srv
 spec:
+  type: LoadBalancer
   selector:
     app: getmem
   ports:

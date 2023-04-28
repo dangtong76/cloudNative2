@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
 
@@ -7,14 +7,14 @@ export function NodeCheck ()  {
 
   const nodecheckUrl = process.env.REACT_APP_NODECHECK_URL || 'http://localhost:3002/api/nodecheck';
   console.log('REACT_APP NodeCheckURL: ' + process.env.REACT_APP_NODECHECK_URL);
-  const fetchNodeInfo = async () => {
+  const fetchNodeInfo = useCallback(async () => {
     const res = await axios.get(nodecheckUrl);
     setNodeInfo(res.data);
-  };
+  },[nodecheckUrl]);
 
   useEffect(() => {
     fetchNodeInfo();
-  }, []);
+  }, [fetchNodeInfo]);
   
   const renderedNodeInfo = Object.values(nodeInfo).map((node,i) => {
     console.log(node);

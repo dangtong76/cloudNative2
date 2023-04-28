@@ -21,6 +21,7 @@ kind: Service
 metadata:
   name: sayservice-srv
 spec:
+  type: LoadBalancer
   selector:
     app: sayservice
   ports:

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frontend-container
-          image: dangtong76/frontend
+          image: dangtong/frontend
           env:
             - name: REACT_APP_GETMEM_URL
               value: 'http://www.acorn.com/api/getmem'
@@ -28,6 +28,7 @@ kind: Service
 metadata:
   name: frontend-srv
 spec:
+  type: LoadBalancer
   selector:
     app: frontend
   ports:
