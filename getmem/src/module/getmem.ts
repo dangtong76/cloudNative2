@@ -7,7 +7,6 @@ const message = "this is app1. server memory size : " + meminfo + "\n";
 
 router.get('/api/getmem', (req: Request, res: Response) => {
   console.log(message);
-  res.header("Access-Control-Allow-Origin", "*");
   res.send({message});
 });
 

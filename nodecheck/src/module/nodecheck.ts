@@ -6,7 +6,6 @@ const message = "this is app1. you've hit " + os.hostname() + "\n";
 
 router.get('/api/nodecheck', (req: Request, res: Response) => {
   console.log(message);
-  res.header("Access-Control-Allow-Origin", "*");
   res.send({message});
 });
 
