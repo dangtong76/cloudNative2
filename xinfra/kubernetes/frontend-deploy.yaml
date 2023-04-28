@@ -17,11 +17,11 @@ spec:
           image: dangtong/frontend
           env:
             - name: REACT_APP_GETMEM_URL
-              value: 'http://www.acorn.com:3001/api/getmem'
+              value: 'http://www.acorn.com/api/getmem'
             - name: REACT_APP_NODECHECK_URL
-              value: 'http://www.acorn.com:3002/api/nodecheck'
+              value: 'http://www.acorn.com/api/nodecheck'
             - name: REACT_APP_SAYSERVICE_URL
-              value: 'http://www.acorn.com:3003/api/sayservice'
+              value: 'http://www.acorn.com/api/sayservice'
 ---
 apiVersion: v1
 kind: Service

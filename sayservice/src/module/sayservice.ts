@@ -5,6 +5,7 @@ const router = express.Router();
 const message = "hi my name is dangtong application \n";
 router.get('/api/sayservice', (req: Request, res: Response) => {
   console.log(message);
+  res.header("Access-Control-Allow-Origin", "*");
   res.send({message});
 });
 
